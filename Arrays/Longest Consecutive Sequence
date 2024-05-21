@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {2, 100, 1, 3};
+        int count = countConsecutive(array);
+        System.out.println("Count of consecutive numbers: " + count);
+    }
+
+    public static int countConsecutive(int[] array) {
+        // Step 1: Sort the array
+        Arrays.sort(array);
+        
+        int count = 1;
+        
+        // Iterate over the sorted array to count consecutive numbers
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i + 1] - array[i] == 1) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
+
+TIME COMPLEXITY: O(N logn N) +O(N)
+SPACE COMPLEXITY: O(1)
