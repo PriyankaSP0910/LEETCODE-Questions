@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {6, 2, 3, 4, 1, 9}; 
+        findMinAndMax(arr);
+    }
+
+    static void findMinAndMax(int[] arr) {
+
+        int min = arr[0];
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        System.out.println(max + " maximum");
+        System.out.println(min + " minimum");
+    }
+}
+
+// TIME COMPLEXITY: O(N)
+// SPACE COMPLEXITY: 0(1)
