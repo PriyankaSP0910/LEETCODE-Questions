@@ -7,6 +7,7 @@ public void nextPermutation(int[] nums) {
     i--;
   }
 
+// Find THE NEXT LARGER NUMBER TO SWAP WITH THE BREAKPOINT
 if(i >= 0)
 {
   int j = nums.length - 1;
@@ -17,6 +18,7 @@ if(i >= 0)
   swap(nums, i, j);
 }
 
+//ONCE SWAPPED SORT THE i+1 to end elements
 Arrays.sort(nums,i+1,nums.length-1);
 
 public void swap(int[] nums, int i, int j) {
