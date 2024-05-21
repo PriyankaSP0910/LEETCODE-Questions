@@ -1,0 +1,40 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {2, 1, 100, 3, 4,200,7,900,8};
+        int maxLength = findLongestIncreasingSubsequence(array);
+        System.out.println("Length of longest increasing subsequence: " + maxLength); 
+    }
+
+    public static int findLongestIncreasingSubsequence(int[] array) {
+        int n = array.length;
+
+        // Initialize an array to hold the lengths of the longest increasing subsequence ending at each element
+        int[] lis = new int[n];
+        Arrays.fill(lis, 1);
+
+        // Compute the LIS values
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (array[i] > array[j] && lis[i] < lis[j] + 1) {
+                    lis[i] = lis[j] + 1;
+                }
+            }
+        }
+
+        // Find the maximum value in the lis array
+        int maxLength = 0;
+        for (int length : lis) {
+            if (length > maxLength) {
+                maxLength = length;
+            }
+        }
+
+        return maxLength;
+    }
+}
+
+
+//TIME COMPLEXITY: O(N)^2
+//SPACE COMPLEXITY: O(N)
