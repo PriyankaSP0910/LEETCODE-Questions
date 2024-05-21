@@ -11,12 +11,12 @@ public class Main {
         // Step 1: Sort the array
         Arrays.sort(array);
         
-        int count = 1;
+        int count = 0;
         
         // Iterate over the sorted array to count consecutive numbers
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i + 1] - array[i] == 1) {
-                count++;
+                count=count+1;
             }
         }
         
