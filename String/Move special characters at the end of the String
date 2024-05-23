@@ -1,1 +1,28 @@
+class Main {
+    public static String moveSpecialCharacters(String str) {
+        int len = str.length();
+        String spchar = "[^a-zA-Z0-9\\s]"; // Pattern to match special characters
+        String r1 = "", r2 = "";
+        
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            
+            if (String.valueOf(c).matches(spchar)) { //matches method is available on String class and not char
+                r2 += c; // Append special characters to r2
+            } else {
+                r1 += c; // Append alphanumeric characters to r1
+            }
+        }
+        
+        return r1 + r2; // Concatenate r1 and r2
+    }
 
+    public static void main(String[] args) {
+        String str = "He@l#lo!8";
+        System.out.println(moveSpecialCharacters(str)); // Output: Hello8@#!
+    }
+}
+
+
+//TIME COMPLEXITY: O(N)
+//SPACE COMPLEXITY: O(N) due to concatenation of string r1 and r2
