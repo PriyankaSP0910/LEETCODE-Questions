@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        String numbers = "ABCDE"; // WORKS ON NUMBERS ALSO AS charAt(i) gets the ASCII Value 
+        
+        int len = numbers.length();
+        int count = 1;
+        for (int i = 1; i < len; i++) {
+            if (numbers.charAt(i) - numbers.charAt(i - 1) == 1) {
+                count += 1;
+            }
+        }
+        
+        System.out.println(count);
+    }
+}
+
+//TIME COMPLEXITY: O(N)
+//SPACE COMPLEXITY: O(1)
