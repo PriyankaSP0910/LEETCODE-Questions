@@ -1,1 +1,37 @@
+public class Main
+{
+    public static void main(String args[])
+    {
+        String a="cat";
+        String b="tac";
+        if(a.length()!=b.length())
+        {
+            System.out.println(false);
+            System.exit(0);
+        }
+        else
+        {
+            int arr[]=new int[26];
+            for(int i=0;i<a.length();i++)
+            {
+            ++arr[a.charAt(i)-'a'];
+            --arr[b.charAt(i)-'a'];
+            }
+            
+            for(int i=0;i<arr.length;i++)
+            {
+                if(arr[i]>0)
+                {
+                    System.out.println(false);
+                    System.exit(0);
+                }
+                
+            }
+        }    
+      System.out.println(true);
+    }
+}
 
+
+// Time Complexity: O(n)
+// Space Complexity: O(n), primarily due to the storage of the input strings
