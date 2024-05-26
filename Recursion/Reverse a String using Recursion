@@ -1,1 +1,23 @@
+public class Main{
+    static void reverse(char[] s,int index,int length)
+    {
+        if(index==length)
+        {
+            return;
+        }
+        else
+        {
+        char x=s[index];
+        reverse(s,index+1,length);
+        System.out.println(x);
+        }
+    }
+     public static void main(String []args){
+        String s="priya";
+        char a[]=s.toCharArray();
+        reverse(a,0,s.length());
+     }
+}
 
+Time Complexity: O(n) // each recursion call for length of string
+Space Complexity: O(n) //stack used to store each recursive call
