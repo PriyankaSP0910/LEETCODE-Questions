@@ -1,1 +1,38 @@
+public class Main
+{
+public static void main(String args[])
+{
+String s="raCeCare";
+int p1 = 0;
+int p2= s.length()-1;
+         
+        // Compares character until they are equal
+        while(p1<= p2)
+        {
+             
+            char s1 = s.charAt(p1);
+            char s2 = s.charAt(p2);
+             
+            // If characters are equal
+            if( s1 == s2)
+            {
+                p1++;
+                p2--;
+            }
+             
+            // If characters are not equal then
+            // sentence is not palindrome
+            else
+                System.out.println(false);
+                System.exit(0);
+                
+        }
+         
+        // Returns true if sentence is palindrome
+        System.out.println(true);
+    }
 
+}
+
+// TIME COMPLEXITY: O(N)
+// SPACE COMPLEXITY: O(1)
