@@ -52,3 +52,8 @@ public class HelloWorld {
         h.print(x);
     }
 }
+
+//TIME COMPLEXITY: O(N log N) -> where N is the partitioning of N element and O(log N) is the time to recusively call quick 
+on the sub arrays
+
+//SPACE COMPLEXITY: 0(1) -> In place sorting no additional space required
