@@ -1,0 +1,54 @@
+public class HelloWorld {
+    int part(int a[],int low,int high)
+    {
+        int pivot=a[low];
+        int i=low;
+        int j=high;
+        while(i<j)
+        {
+            while(a[i]<=pivot && i<=high)
+            {
+                i++;
+            }
+             while(a[j]>pivot && j>=low)
+            {
+                j--;
+            }
+            if(i<j)
+            {
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+        int temp=a[j];
+        a[j]=a[low];
+        a[low]=temp;
+        return j;
+    }
+    void quicksort(int a[],int low,int high)
+    {
+    if(low<high)
+    {
+       int partition=part(a,low,high);
+       part(a,low,partition-1);
+       part(a,partition+1,high);
+    }
+    }
+    public void print(int a[])
+    {
+        int len=a.length;
+        for(int i=0;i<len;i++)
+        {
+            System.out.println(a[i]+" ");
+        }
+    }
+    public static void main(String[] args) {
+        HelloWorld h=new HelloWorld();
+        int x[]={6,7,4,2,1};
+        int low=0;
+        int high=x.length-1;
+        h.quicksort(x,low,high);
+        h.print(x);
+    }
+}
